@@ -1,4 +1,4 @@
-%_javapackages_macros
+%{?_javapackages_macros:%_javapackages_macros}
 Name:           istack-commons
 Version:        2.17
 Release:        2.0%{?dist}
@@ -151,3 +151,34 @@ cp -p soimp/pom.xml %{buildroot}%{_mavenpomdir}/JPP-%{name}-soimp.pom
 %files javadoc
 %{_javadocdir}/%{name}
 %doc Licence.txt
+
+
+%changelog
+* Fri Jul 26 2013 Ade Lee <alee@rdhat.com> - 2.17-2
+- Bugzilla BZ#988933 - Removed unneeded build dependencies.
+
+* Thu May 16 2013 Tom Callaway <spot@fedoraproject.org> - 2.17-1
+- update to 2.17
+
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.6.1-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
+* Wed Feb 06 2013 Java SIG <java-devel@lists.fedoraproject.org> - 2.6.1-6
+- Update for https://fedoraproject.org/wiki/Fedora_19_Maven_Rebuild
+- Replace maven BuildRequires with maven-local
+
+* Sat Jul 21 2012 Juan Hernandez <juan.hernandez@redhat.com> - 2.6.1-5
+- Add maven-enforcer-plugin as build time dependency
+
+* Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.6.1-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
+* Sat Mar 31 2012 Gil Cattaneo <puntogil@libero.it> 2.6.1-3
+- Rebuilt with codemodel support
+- Enable maven-plugin, test and buildtools modules
+
+* Mon Feb 13 2012 Juan Hernandez <juan.hernandez@redhat.com> 2.6.1-2
+- Minor cleanups of the spec file
+
+* Mon Jan 16 2012 Marek Goldmann <mgoldman@redhat.com> 2.6.1-1
+- Initial packaging
