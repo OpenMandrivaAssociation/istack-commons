@@ -1,9 +1,9 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:           istack-commons
 Version:        2.17
-Release:        2.0%{?dist}
+Release:        5.1
 Summary:        Common code for some Glassfish projects
-
+Group:		Development/Java
 License:        CDDL and GPLv2 with exceptions
 URL:            http://istack-commons.java.net
 
@@ -127,25 +127,10 @@ cp -p soimp/pom.xml %{buildroot}%{_mavenpomdir}/JPP-%{name}-soimp.pom
 %add_maven_depmap JPP-%{name}-maven-plugin.pom %{name}-maven-plugin.jar -f maven-plugin
 %add_maven_depmap JPP-%{name}-soimp.pom %{name}-soimp.jar
 
-%files
-%{_mavenpomdir}/JPP-%{name}-runtime.pom
-%{_mavenpomdir}/JPP-%{name}-test.pom
-%{_mavenpomdir}/JPP-%{name}-tools.pom
-%{_mavenpomdir}/JPP-%{name}.pom
-%{_mavenpomdir}/JPP-%{name}-buildtools.pom
-%{_mavenpomdir}/JPP-%{name}-soimp.pom
-%{_mavendepmapfragdir}/%{name}
-%{_javadir}/%{name}-buildtools.jar
-%{_javadir}/%{name}-runtime.jar
-%{_javadir}/%{name}-soimp.jar
-%{_javadir}/%{name}-test.jar
-%{_javadir}/%{name}-tools.jar
+%files -f .mfiles
 %doc Licence.txt
 
-%files -n maven-istack-commons-plugin
-%{_javadir}/%{name}-maven-plugin.jar
-%{_mavenpomdir}/JPP-%{name}-maven-plugin.pom
-%{_mavendepmapfragdir}/%{name}-maven-plugin
+%files -n maven-istack-commons-plugin -f .mfiles-maven-plugin
 %doc Licence.txt
 
 %files javadoc
