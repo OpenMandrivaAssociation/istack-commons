@@ -1,7 +1,7 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:           istack-commons
 Version:        2.17
-Release:        5.1
+Release:        5.2
 Summary:        Common code for some Glassfish projects
 Group:		Development/Java
 License:        CDDL and GPLv2 with exceptions
