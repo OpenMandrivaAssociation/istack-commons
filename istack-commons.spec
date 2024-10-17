@@ -5,7 +5,7 @@ Release:        5.3
 Summary:        Common code for some Glassfish projects
 Group:		Development/Java
 License:        CDDL and GPLv2 with exceptions
-URL:            http://istack-commons.java.net
+URL:            https://istack-commons.java.net
 
 # svn export https://svn.java.net/svn/istack-commons~svn/tags/istack-commons-2.17/ istack-commons-2.17
 # find istack-commons-2.17/ -name '*.class' -delete
